@@ -1,0 +1,233 @@
+
+
+.pomodoro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  position: relative; /* mandatory to manage the position of the bottle */
+  text-align: center;
+  background: rgba(126, 194, 244, 0.18);
+}
+
+/* timer */
+.pomodoro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(145, 158, 205, 0.18);
+  border-radius: 20px;
+}
+
+/* Stats */
+.pomodoro-stats {
+  position: absolute;
+  bottom: 200px;
+  left: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: right;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* notice d'emploi*/
+.pomodoro-explication {
+  position: absolute;
+  bottom: 200px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.time-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+/* Bottle positioning */
+.bottle-container {
+  position: absolute;
+  bottom: 355px;
+  right: 25px;
+}
+
+.bottle {
+  width: 100px;
+  height: 200px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(188, 182, 182, 0.4);
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #c88b31;
+  transition: height 0.5s ease-out;
+}
+
+/* earth line */
+.ground {
+  width: calc(100% - 140px);
+  height: 5px;
+  background-color: rgba(89, 40, 18, 0.34);
+  position: absolute;
+  bottom: 345px;
+  left: 0;
+}
+
+.brown-background {
+  width: 100%;
+  height: calc(100vh - 150px); /* under ground filling */
+  background: linear-gradient(to top, rgba(19, 9, 5, 0.34), rgba(96, 51, 27, 0.58));
+  position: absolute;
+  left: 0;
+  top: 683px;
+  z-index: -1;
+}
+
+.tree {
+  position: absolute;
+  bottom: 345px;
+  left: 30px;
+  width: 200px;
+  height: auto;
+}
+
+.apple {
+  position: absolute;
+  bottom: 440px;
+  left: 140px;
+  width: 40px;
+  height: auto;
+  z-index: 10;
+}
+
+.apple.animate {
+  animation: bounce 4s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(100px, 100px) rotate(90deg);
+  }
+  30% {
+    transform: translate(150px, 60px) rotate(180deg);
+  }
+  40% {
+    transform: translate(200px, 100px) rotate(270deg);
+  }
+  50% {
+    transform: translate(250px, 75px) rotate(360deg);
+  }
+  60% {
+    transform: translate(300px, 100px) rotate(450deg);
+  }
+  70% {
+    transform: translate(350px, 100px) rotate(540deg);
+  }
+  80% {
+    transform: translate(400px, 100px) rotate(630deg);
+  }
+  90% {
+    transform: translate(450px, 100px) rotate(720deg);
+  }
+  100% {
+    transform: translate(100vw, 100px) rotate(720deg);
+  }
+  /* put here the automatic management of bounces when automatic window is resizing */
+}
+
+
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  z-index: 5;
+  opacity: 0.8;
+}
+
+
+.cloud-1 {
+  top: 20px;
+  animation: move-cloud 24s infinite;
+  animation-delay: 0s;
+}
+
+.cloud-2 {
+  top: 60px;
+  animation: move-cloud 21s infinite;
+  animation-delay: 2s;
+}
+
+.cloud-3 {
+  top: 90px;
+  animation: move-cloud 30s infinite;
+  animation-delay: 2s;
+}
+
+.cloud-4 {
+  top: 40px;
+  animation: move-cloud 27s infinite;
+  animation-delay: 2s;
+}
+
+.cloud-5 {
+  top: 75px;
+  animation: move-cloud 25s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes move-cloud {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}

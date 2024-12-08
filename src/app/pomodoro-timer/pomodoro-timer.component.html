@@ -1,0 +1,48 @@
+<div class="pomodoro-container">
+  <div class="pomodoro-content">
+    <h1>Pomodoro Timer</h1>
+    <div class="time-display">{{ formatTime() }}</div>
+    <div class="button-group">
+      <button (click)="startTimer()" [disabled]="isRunning">Start</button>
+      <button (click)="stopTimer()">Pause</button>
+      <button (click)="resetTimer()">Reset</button>
+    </div>
+  </div>
+
+  <div class="bottle-container">
+    <div class="bottle">
+      <div class="water" [style.height]="progress + '%'"></div>
+    </div>
+  </div>
+</div>
+
+<div class="ground"></div>
+<div class="brown-background"></div>
+
+<div class="pomodoro-stats">
+  <p>Cycles passés : {{ completedCycles }}</p>
+  <p>Cycles restants : {{ remainingCycles }}</p>
+  <p>Total cycles : {{ totalCycles }}</p>
+</div>
+
+<div class="break-message">
+  <p *ngIf="isBreak && remainingCycles > 0">Pause en cours...</p>
+  <p *ngIf="isBreak && remainingCycles === 0">Pause longue en cours...</p>
+</div>
+
+<div class="pomodoro-explication">
+  <p>Travaillez intensément pendant 25 minutes </p>
+  <p>Prenez une pause courte de 5 minutes </p>
+  <p>Après 4 cycles, prenez une pause plus longue de 20 minutes</p>
+</div>
+
+
+<img src="../../assets/tree.png" alt="Tree" class="tree">
+<img src="assets/apple.png" alt="Apple" class="apple">
+
+<img src="assets/cloud.png" alt="Cloud" class="cloud cloud-1">
+<img src="assets/cloud.png" alt="Cloud" class="cloud cloud-2">
+<img src="assets/cloud.png" alt="Cloud" class="cloud cloud-3">
+<img src="assets/cloud.png" alt="Cloud" class="cloud cloud-4">
+<img src="assets/cloud.png" alt="Cloud" class="cloud cloud-5">
+
